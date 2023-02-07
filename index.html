@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gossip Chat By Umair</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Chat_icon_%282020%29.svg/1964px-Google_Chat_icon_%282020%29.svg.png" width='32px' height='32px' type="image/x-icon">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="back">
+<!-- Error Message 
+<div class="chk" id="modalHide">
+  <div class="modal">
+    <h1>Something Went Wrong!</h1>
+    <p>It's Look Like that You are not Connected to the Server or Internet has been disconnected. Please Report the Bug to the Developer.</p>
+    <button onclick="closeError()">OK</button>
+  </div>
+</div>
+<div class="chk" id="secondModalHide">
+  <div class="modal">
+    <h1>Requested User Not Found!</h1>
+    <p>Please Enter a Valid Email Address or The user has not Singed up to Texting PRO.</p>
+    <button onclick="closeMailError()">OK</button>
+  </div>
+</div>-->
+<center>
+<h1 style="display:none;" id="blurr">Authentication Failed! - Please Refresh Page OR Try with Other Login/Signup Option.
+</h1>
+</center>
+<div id="blur">
+  
+<div id="loginArea">
+  <div class="container1" >
+    <h4 style="padding-left: 155px
+    ;">Beta</h4> 
+ 
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Chat_icon_%282020%29.svg/1964px-Google_Chat_icon_%282020%29.svg.png" alt="">
+    <h1>Gossip Chat<br>Secure & Private</h1>
+   <button onclick="login()" id="btn1">Continue with Google</button>
+   
+   <button onclick="flogin()" id="btn1">Continue with Facebook</button>
+    
+   <div class="related">
+
+    <a class="rl" href="bscsapp.rf.gd/privacy.html">Privacy</a>
+    <a class="rl" href="bscsapp.rf.gd/termsofuse.html">Terms and Conditions</a>
+    <style>
+.rl{
+  text-decoration: overline;
+  color: black;
+  font-weight: bold;
+  margin: 5px;
+}
+.rl:hover{
+  text-decoration: underline;
+  color: red;
+}
+    </style>
+    </div>
+    
+
+
+  </div>
+</div>
+ 
+
+<!-- User Area -->
+<div id="userArea" class="hide">
+
+  <div class="userHeader">
+
+    <div class="ext1">
+      <img id="userImage" src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Chat_icon_%282020%29.svg/1964px-Google_Chat_icon_%282020%29.svg.png' widt='32px' height='32px' alt="Image">
+      <h1 id="userName">Ahsan</h1>
+    </div>
+
+    <div class="ext2">
+      <div style="float: right;">
+        <span class="span1">Not You! </span>
+        <button onclick="signout()" id="btn2">Logout</button>
+      </div>
+    </div>
+    
+    
+  </div>
+
+  <div class="mainUserArea" onclick="main();">
+      <div class="addContacts" id="contactLists">
+        <h1> <i class="fas fa-users"></i> Add Contacts</h1>
+        <input type="email" id="add_contacts" placeholder="Find Freinds by Email Address"><button onclick="addContact()"><i class="fas fa-user-plus"></i></button>
+        <span id="ext2">Add Contacts & Then Click on Your Contacts to Chat with them</span>
+      </div>
+
+      <div class="messageArea" id="messageArea" onclick="chata();">
+        <h1 id="ext3"> <i class="fas fa-comment-lines"></i> Chats</h1>
+        <div id="allMessages">
+
+        </div>
+        <span id="messageSend">
+          <input type="text" placeholder='Type a Message' id="textInp">
+          <button onclick="sendSMS()"><i class="fab fa-telegram"></i></button>
+        </span>
+          
+      </div>
+      
+      <div class="profileArea" onclick="profa();">
+        <h1> <i class="fas fa-user-circle"></i> My Profile</h1>
+        <img  id="userProfileImage">
+        <h2 id="userNameProfile"></h2>
+        <h3>Status: Online <i class="fas fa-circle"></i></h3>
+        <h3>E-Mail Address : <span id="userProfileEmail"></span></h3>
+        <h3>User ID : <span id="userProfileId"></span></h3>
+        <h3>Last Login : <span id="lastLogin"></span></h3>
+        <button onclick="signout()" id="profileLogout">Logout</button><br>
+        <button id="deleteButton" onclick="signout()">DELETE My Account</button>
+      </div>
+  </div>
+
+  </div>
+
+</div>
+
+</div>
+</body>
+<!-- <input type="text" id="inp1"> <button onclick="sendSms()">send</button>
+    <p id="mes"></p> -->
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0" nonce="TfKgieqp"></script>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+
+<script src="app.js"></script>
+</html>
